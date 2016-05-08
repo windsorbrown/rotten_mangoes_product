@@ -1,0 +1,9 @@
+<div class="movie">
+  <figure class="movie-poster"> <%= link_to image_tag(@movie.image), movie_path(@movie) %></figure>
+  <div class="movie-title"><%= link_to @movie.title, movie_path(@movie) %></div>
+
+  <p><%= @movie.review_average %>/10</p>
+  <p><%= @movie.description[0..100] %></p>
+</div>
+
+ 

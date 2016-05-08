@@ -1,0 +1,34 @@
+
+
+
+<main class="main-content">
+        <div class="container">
+          <div class="page">
+            <div class="breadcrumbs">
+            <div class="content">
+              <div class="row">
+                <div class="col-md-4">
+<%= link_to "Back to all movies", movies_path %>
+                  <h2>Add A Movie</h2>
+                  
+              <%= render 'form' %>
+                </div>
+                <div class="col-md-7 col-md-offset-1">
+               <p> <%= render 'layouts/flash_message' %></p>
+<% if @movie.errors.any? %>
+    <div>
+      <%= pluralize(@movie.errors.count, "error") %> prevented this movie from being submitted:
+      <ul>
+        <% @movie.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> <!-- .container -->
+      </main>

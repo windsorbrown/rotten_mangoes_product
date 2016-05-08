@@ -1,0 +1,32 @@
+
+
+
+<%#render 'search_form' %>
+
+
+
+     
+
+<main class="main-content">
+  
+
+  <div class="container">
+    <%= render 'search_form' %> <% if params[:movie] %>
+        <%= link_to "view all movies", movies_path %>
+       <% end %>
+    <div class="page">
+   
+      
+        
+        <div class="movie-list">
+        <% @movies.each do |movie| %>
+        <% @movie = movie%>
+          <%= render movie %>
+        <% end %>
+        <p><%= paginate @movies %></p>
+      </div>
+     
+    </div>
+  </div> 
+</main>
+

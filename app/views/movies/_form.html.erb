@@ -1,0 +1,36 @@
+ <%= form_for  @movie, :html =>{:multipart => true, :class => 'contact-form'} do |f| %>
+   
+    <div>
+      <%= f.label :title %><br>
+      <%= f.text_field :title %>
+    </div>
+    <div>
+      <%= f.label :release_date %><br>
+      <%= f.date_field :release_date %>
+    </div>
+    <div>
+      <%= f.label :director %><br>
+      <%= f.text_field :director %>
+    </div>
+    <div>
+      <%= f.label :runtime_in_minutes %><br>
+      <%= f.number_field :runtime_in_minutes %>
+    </div>
+  <div>
+    <%= f.label :image %><br>
+    <%= f.file_field :image %><br>
+    <%= f.label :remote_image_url, "or Image URL" %><br>
+    <%= f.text_field :remote_image_url %>
+  </div>
+    <div>
+      
+       
+    </div>
+    <div>
+      <%= f.label :description %><br>
+      <%= f.text_area :description %>
+    </div>
+    <div>
+      <%= f.submit "Submit" %> 
+    </div>
+    <% end %>

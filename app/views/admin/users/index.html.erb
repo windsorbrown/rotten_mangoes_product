@@ -1,0 +1,46 @@
+
+
+
+
+            <main class="main-content">
+            <div class="container">
+          <div class="page">
+
+         
+            
+            <h2 class="section-title">User List</h2>
+            <%  
+              @users.all.limit(10).each do |user|
+               %>
+            <div class="row">
+             
+              <div class="col-md-3">
+                <div class="team">
+                   <h2 class="team-name"><%= user.full_name %></h2>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="team">
+                  <h2 class="team-name"><%= user.email %></h2>
+                  
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="team">
+                  <h2 class="team-name"><%= link_to "edit", edit_admin_user_path(user) , {:class => "button"} %> | (<%= link_to "delete", admin_user_path(user), method: :delete, data: {   confirm: "Are you sure?" }  %>)</h2>      
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="team">
+                  <h2 class="team-name"><%= link_to 'Impersonate', impersonate_admin_user_path(user), method: :post, confirm: "Are you sure?"%></h2> 
+                </div>
+              </div>
+
+
+            </div>
+             <% end %>
+
+             <%= paginate @users %>
+          </div>
+        </div> <!-- .container -->
+      </main>

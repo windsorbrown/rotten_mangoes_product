@@ -1,0 +1,41 @@
+
+
+
+  
+
+      <main class="main-content">
+        <div class="container">
+          <div class="page">
+
+
+      
+        <%= link_to "Back to all movies", movies_path %><br/>
+          <h3>Reviews of <em><%= @user.firstname %></em></h3>
+        <% if current_user %>
+      
+     <% @user.reviews.each do |review| %>
+      <p></p>
+    
+            <div class="row">
+              <div class="col-md-1">
+              </div>
+              <div class="col-md-2">
+                <figure class="movie-poster"><img src="<%= review.movie.image%>" alt=""></figure>
+              </div>
+              <div class="col-md-9">
+
+                 <p class="leading"><%=link_to review.movie.title, movie_path(review.movie_id) %></p>
+                  <p><%= review.rating_out_of_ten %>/10</p>
+                <%= review.text %>
+              </div>
+            </div>
+            <hr>
+    <% end %>
+    <% else %>
+      <p>Please <%= link_to "log in", new_session_path %> to see reviews and add your own.</p> 
+    <% end %>
+              
+            </div>
+          </div>
+        </div> 
+      </main>

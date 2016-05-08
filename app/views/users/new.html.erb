@@ -1,0 +1,34 @@
+
+
+
+    <main class="main-content">
+        <div class="container">
+          <div class="page">
+            <div class="breadcrumbs">
+            <div class="content">
+              <div class="row">
+                <div class="col-md-4">
+                  <h2>Sign Up</h2>
+                  
+           <%= render 'new_user_form' %>
+                </div>
+                <div class="col-md-7 col-md-offset-1">
+               <p> <%= render 'layouts/flash_message' %></p>
+
+                 <% if @user.errors.any? %>
+    <div>
+      <%= pluralize(@user.errors.count, "error") %> prevented the account from being created:
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> <!-- .container -->
+      </main>

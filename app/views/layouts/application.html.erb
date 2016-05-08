@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RottenMangoes</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  
+    <!-- Loading third party fonts -->
+    <link href="http://fonts.googleapis.com/css?family=Roboto:300,400,700|" rel="stylesheet" type="text/css">
+    <link href="/fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Loading main css file -->
+    <link rel="stylesheet" href="/stylesheets/style.css">
+
+
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script src="/js/plugins.js"></script>
+    <script src="/js/app.js"></script>
+
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<!-- when the flash message is implemented it will be done here so it loads as soon as page is uploading like logged out / deleted. . most of the stuff will be within the modal -->
+
+
+<% if flash[:notice] || flash[:error] %>
+  <!-- the render is commented right now -->
+  <% render 'layouts/flash_message' %>
+
+<% end %>
+
+<!-- end here -->
+
+<div id="site-content">
+ <%= render 'layouts/header' %>
+  
+  <%= yield %>
+  <%= render 'layouts/footer' %>
+</div>
+</body>
+</html>
+
+

@@ -1,0 +1,35 @@
+
+
+
+<main class="main-content">
+        <div class="container">
+          <div class="page">
+            <div class="breadcrumbs">
+            <div class="content">
+              <div class="row">
+                <div class="col-md-4">
+<%= link_to "Back to all movies", movies_path %> | <%= link_to "Back to movie", movie_path(@movie) %>
+               <h2>Write a review of <em><%= @movie.title %></em>.</h2>
+
+                  
+              <%= render 'new_review' %>
+                </div>
+                <div class="col-md-7 col-md-offset-1">
+               <p> <%= render 'layouts/flash_message' %></p>
+<% if @review.errors.any? %>
+    <div>
+      <%= pluralize(@review.errors.count, "error") %> prevented the review from being saved:
+      <ul>
+        <% @review.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> <!-- .container -->
+      </main>

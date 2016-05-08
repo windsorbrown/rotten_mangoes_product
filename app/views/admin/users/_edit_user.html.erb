@@ -1,0 +1,29 @@
+ 
+  <%= form_for [:admin, @user], :html => {class: "contact-form"} do |f| %>
+  <div>
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div>
+    <%= f.label :firstname, "First Name" %><br>
+    <%= f.text_field :firstname %>
+  </div>
+  <div>
+    <%= f.label :lastname, "Last Name" %><br>
+    <%= f.text_field :lastname %>
+  </div>
+  <div>
+    <%= f.label :password %><br>
+    <%= f.password_field :password %>
+  </div>
+  <div>
+    <%= f.label :password_confirmation %><br>
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <div>
+    <p>  <%= f.label :admin , 'Make Admin'%> <%= f.check_box :admin  %> </p>
+    
+  </div>
+
+  <div><%= f.submit "Submit" %></div>
+<% end %>

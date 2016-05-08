@@ -1,0 +1,23 @@
+
+<!--   <div class="flash-container">
+           
+  <a href="#modal-one" class="btn btn-big">Modal!</a>
+
+</div>
+ -->
+
+ <!-- <div class="modal" id="modal-one" aria-hidden="true">
+  <div class="modal-dialog">
+      <a href="#close" class="btn-close" aria-hidden="true">×</a> 
+    <div class="modal-body"> -->
+        <% flash.each do |key, value| %>
+               <%= content_tag(:div, value) %>
+              <% end %>
+   <!--  </div>
+    <div class="modal-footer">
+      <a href="#close" class="btn">Nice!</a>  
+    </div>
+    </div>
+  </div>
+</div>
+ -->

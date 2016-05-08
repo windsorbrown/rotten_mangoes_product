@@ -1,0 +1,63 @@
+
+
+
+      <header class="site-header">
+        <div class="container">
+          <a href="/" id="branding">
+            <img src="/images/logo.png" alt="" class="logo">
+            <div class="logo-copy">
+              <h1 class="site-title">Rotten Mangoes</h1>
+              <small class="site-description">More bitter than sweet</small>
+            </div>
+          </a> <!-- #branding -->
+
+
+      
+          <div class="main-navigation">
+            <button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
+            <ul class="menu">
+              <li class="menu-item"><a href="/">Home</a></li>
+              
+            <% if current_user %>
+              Welcome Back <%= current_user.firstname %> (<%= link_to "Log out", session_path("current"), method: :delete %>)
+              <% if current_user.admin? %> (<%= link_to "Admin Page", admin_users_path  %>)
+                   <% elsif  impersonating? %>
+                (Impersonating)
+                <%= link_to "Depersonate", depersonate_admin_user_path(current_user), method: :post, confirm: 'Sure dude?' %>
+
+              <% end %>  
+              
+              <%else %>
+          
+              <li class="menu-item"><%= link_to "Submit a movie!", new_movie_path %></li>
+              
+
+               <li class="menu-item"><%= link_to "Log In", new_session_path %></li>
+             <!--   <li class="menu-item"><a href="#modal-two" class="btn btn-big">Bopu! </a></li>
+              -->
+               <li class="menu-item"><%= link_to "Sign Up", new_user_path, id: "create_user"%></li>
+             
+
+              
+            <% end %>
+              <li class="menu-item">
+               <!--  <form class="search-form-2">
+              <input type="text" placeholder="Search...">
+              <button><i class="fa fa-search"></i></button>
+            </form> -->
+        
+            </li>
+            </ul> 
+
+
+
+          <!-- change this to a jquery form instead -->
+         
+
+ 
+          
+          </div> 
+
+          <div class="mobile-navigation"></div>
+        </div>
+      </header>
