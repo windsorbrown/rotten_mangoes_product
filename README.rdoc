@@ -2,4 +2,5 @@ Rotten Mangoes --- Movie review site
 
 Working demo http://rottenmangoesnew.heroku.com
 
-
+demo admin user - demo@demo.com
+password - 123
