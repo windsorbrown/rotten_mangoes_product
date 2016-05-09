@@ -1,5 +1,15 @@
-Rotten Mangoes --- Movie review site
+Rotten Mangoes ---
 
+--An application made in Ruby on Rails backend.
+- Allows users to submit / search and review movies on the site
+- Also has an admin panel which allows user administration and switching roles 
+
+-- Additions to be made --
+
+- Add Jquery and Ajax on forms submitted
+- Change functionality so only admin can submit/add/edit a movie. 
+
+- Link to the deployed site
 Working demo http://rottenmangoesnew.heroku.com
 
 demo admin user - demo@demo.com
