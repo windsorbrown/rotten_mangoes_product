@@ -37,7 +37,7 @@ end
     remote_image_url: movie.poster, 
    description: movie.plot_summary, 
     runtime_in_minutes: movie.length, 
-        release_date: movie.release_date)
+          release_date: movie.release_date)
   
 
   end
