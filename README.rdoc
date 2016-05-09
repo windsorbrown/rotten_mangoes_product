@@ -1,5 +1,5 @@
 Rotten Mangoes --- Movie review site
 
-Working demo http://rottenmangoes.heroku.com
+Working demo http://rottenmangoesnew.heroku.com
 
 
